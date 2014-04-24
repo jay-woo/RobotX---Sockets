@@ -18,10 +18,11 @@ clientSocketB.connect((host, portB))
 clientSocketC.connect((host, portC))
 
 """Each socket receives data from the server"""
-dataA = clientSocketA.recv(fileSize)
-dataB = clientSocketB.recv(fileSize)
-dataC = clientSocketC.recv(fileSize)
-
-print("Data A: %s" % dataA.decode('ascii'))
-print("Data B: %s" % dataB.decode('ascii'))
-print("Data C: %s" % dataC.decode('ascii'))
+while True:
+    dataA = clientSocketA.recv(fileSize)
+    dataB = clientSocketB.recv(fileSize)
+    dataC = clientSocketC.recv(fileSize)
+    
+    print("Data A: %s" % dataA.decode('ascii'))
+    print("Data B: %s" % dataB.decode('ascii'))
+    print("Data C: %s" % dataC.decode('ascii'))

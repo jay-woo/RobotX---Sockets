@@ -1,5 +1,5 @@
 import socket
-import sys
+import time
 
 """Creates 3 server sockets"""
 serverSocketA = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -33,15 +33,9 @@ while True:
     fileA = open('sample1.xml', 'rb').read()
     fileB = open('sample2.xml', 'rb').read()
     fileC = open('sample3.xml', 'rb').read()
-    
-    print fileA
-    
+        
     clientSocketA.send(fileA.encode('ascii'))
     clientSocketB.send(fileB.encode('ascii'))
     clientSocketC.send(fileC.encode('ascii'))
     
-    serverSocketA.close()
-    serverSocketB.close()
-    serverSocketC.close()
-    
-    sys.exit()
+    time.sleep(0.1)
